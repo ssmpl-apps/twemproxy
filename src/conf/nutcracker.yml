@@ -1,0 +1,16 @@
+alpha:
+  listen: 127.0.0.1:22122
+  hash: fnv1a_64
+  distribution: ketama
+  preconnect: false
+  auto_eject_hosts: true
+  redis: true
+  backlog: 512
+  client_connections: 0
+  server_connections: 1
+  server_retry_timeout: 2000
+  server_failure_limit: 1
+  servers:
+   - 127.0.0.1:6379:1 mymaster
+  sentinels:
+   - 127.0.0.1:26379:1
